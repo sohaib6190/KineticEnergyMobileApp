@@ -105,108 +105,6 @@ class _FCMService {
     _onLaunceStream.close();
   }
 
-  // void showDialogByNotificationType(data, BuildContext context,
-  //     {required body}) {
-  //   if (data['type'] == 'App\\Notifications\\HowwePostNotification') {
-  //     var map = data['post'] as Map<String, dynamic>;
-
-  //     ((ProfileBloc.of(context).state!.user.type.name != UserType.artist.name)
-  //         ? Navigator.pushNamed(
-  //             context,
-  //             ArtistProfilePage.routeName,
-  //             arguments:
-  //                 ArtistProfilePageConfig(map['user_id'], action: "post"),
-  //           )
-  //         : Navigator.pushNamed(
-  //             context,
-  //             HowweProfilePage.routeName,
-  //             arguments: HowweProfilePageConfig(map['user_id'], action: "post"),
-  //           ));
-  //   } else if (data['type'] == 'App\\Notifications\\HowweStoryNotification') {
-  //     var map = data['story'] as Map<String, dynamic>;
-
-  //     ((ProfileBloc.of(context).state!.user.type.name != UserType.artist.name)
-  //         ? Navigator.pushNamed(
-  //             context,
-  //             ArtistProfilePage.routeName,
-  //             arguments:
-  //                 ArtistProfilePageConfig(map['user_id'], action: "stories"),
-  //           )
-  //         : Navigator.pushNamed(
-  //             context,
-  //             HowweProfilePage.routeName,
-  //             arguments:
-  //                 HowweProfilePageConfig(map['user_id'], action: "stories"),
-  //           ));
-  //   } else if (data['type'] == 'App\\Notifications\\HowweNotification') {
-  //     var map = data['reel'] as Map<String, dynamic>;
-
-  //     ((ProfileBloc.of(context).state!.user.type.name != UserType.artist.name)
-  //         ? Navigator.pushNamed(
-  //             context,
-  //             ArtistProfilePage.routeName,
-  //             arguments:
-  //                 ArtistProfilePageConfig(map['user_id'], action: "reels"),
-  //           )
-  //         : Navigator.pushNamed(
-  //             context,
-  //             HowweProfilePage.routeName,
-  //             arguments:
-  //                 HowweProfilePageConfig(map['user_id'], action: "reels"),
-  //           ));
-  //   } else if (data['type'] ==
-  //       'App\\Notifications\\HowweLiveBroadcastNotification') {
-  //     var map = data['broadcast'] as Map<String, dynamic>;
-
-  //     ((ProfileBloc.of(context).state!.user.type.name != UserType.artist.name)
-  //             ? Navigator.pushNamed(
-  //                 context,
-  //                 ArtistProfilePage.routeName,
-  //                 arguments: ArtistProfilePageConfig(
-  //                   map['host_id'],
-  //                 ),
-  //               )
-  //             : Navigator.pushNamed(
-  //                 context,
-  //                 HowweProfilePage.routeName,
-  //                 arguments: HowweProfilePageConfig(
-  //                   map['host_id'],
-  //                 ),
-  //               ))
-  //         .then((value) {
-  //       HowweJoinLiveBloc.of(context).joinLive(map['channel']);
-  //     });
-  //   } else if (data['type'] ==
-  //       'App\\Notifications\\RemindBookingNotification') {
-  //     RemindBookingDialog.showBottomSheet(context, data['booking_id']);
-  //   } else if (data['type'] == 'App\\Notifications\\RateBookingNotification') {
-  //     Future.delayed(Duration(seconds: 2), () {
-  //       BookingBloc.of(context).getMyBookings();
-  //       RateUserDialog.showBottomSheet(context, data['booking_id']);
-  //     });
-  //   } else if (data['type'] ==
-  //           'App\\Notifications\\CustomerEndBookingNotification' ||
-  //       data['type'] == 'App\\Notifications\\ArtistEndBookingNotification') {
-  //     BookingBloc.of(context).getMyBookings();
-  //     EndBookingDialog.showBottomSheet(
-  //       context,
-  //       data['booking_id'],
-  //       body: body,
-  //     );
-  //   } else if (data['type'] ==
-  //       'App\\Notifications\\CustomerToExtendBookingNotification') {
-  //     ExtendBookingDialog.showBottomSheet(context, data['booking_id']);
-  //   } else if (data['type'] ==
-  //           'App\\Notifications\\AcceptBookingNotification' ||
-  //       data['type'] == 'App\\Notifications\\RefuseBookingNotification' ||
-  //       data['type'] == 'App\\Notifications\\ArtistStartEventNotification' ||
-  //       data['type'] == 'App\\Notifications\\CancelBookingNotification' ||
-  //       data['type'] ==
-  //           'App\\Notifications\\ToggleReschedulableBookingNotification') {
-  //     BookingBloc.of(context).getMyBookings();
-  //   }
-  // }
-
   // Show notification using flutter_local_notifications
   void showNotification({
     required String title,
@@ -277,15 +175,15 @@ class NotificationData {
 final firebaseOptions = FirebaseOptions(
   apiKey:
       Platform.isIOS
-          ? 'AIzaSyBbutYYptBRnJhRjnZ4xecXnU3188-3I-8'
-          : 'AIzaSyBPwuGSaypGtOSWfugocwgDdEqpkHEO9lA',
+          ? ''
+          : '',
   appId:
       Platform.isIOS
-          ? '1:323588843238:ios:d06e08a6be4765d5aabd27'
-          : '1:323588843238:android:4c37c7c9416cee7eaabd27',
-  messagingSenderId: '323588843238',
-  projectId: 'arieal-d3764',
-  storageBucket: 'arieal-d3764.firebasestorage.app',
+          ? ''
+          : '',
+  messagingSenderId: '',
+  projectId: '',
+  storageBucket: '',
 );
 
 final fcmService = _FCMService();
